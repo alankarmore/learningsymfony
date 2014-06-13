@@ -4,6 +4,7 @@
 # Bootstrap
 app/bootstrap*
 app/cache/*
+nbproject/*
 
 # Symfony directories
 vendor/*
