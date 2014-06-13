@@ -19,7 +19,7 @@ class SecurityController extends Controller
     public function loginAction(Request $request)
     {
         $session = $this->get('session'); 
-        echo "here";exit;
+        
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
         } else {
