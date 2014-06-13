@@ -1,0 +1,22 @@
+# Created by http://www.gitignore.io
+
+### Symfony2 ###
+# Bootstrap
+app/bootstrap*
+app/cache/*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+web/images/*
+
+# Configuration files
+app/config/parameters.yml
+app/config/parameters.yml.dist
+
+# Composer
+composer.phar
+
