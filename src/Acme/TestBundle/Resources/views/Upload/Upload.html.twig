@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AcmeTestBundle:Upload:Upload{% endblock %}
+
+{% block body %}
+
+<form name="frmUploadFile" method="POST" id="frmUploadFile" enctype="multipart/form-data" action="{{path("upload_file")}}">
+    <h2> Please Upload File </h2>
+    <input type="file" name="image" />
+    <button type="submit">Upload</button>
+</form>
+
+
+{% if status is defined %}
+    {% if status == false %}
+       {% if message is defined %}
+            {{ message }}
+        {% endif %}
+    {% endif %}
+
+    {% if status == true %}
+        <h3> Your uploaded image is </h3>
+        <img src="{{ asset(uploadURL) }}" />
+    {% endif %}
+{% endif %}
+{% endblock %}
+

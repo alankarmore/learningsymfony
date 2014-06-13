@@ -1,0 +1,32 @@
+{% extends "BloggerBlogBundle::layout.html.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <section >
+        {% if error is not null %}
+            <div class="blogger-notice"> {{ error }} </div>
+        {% endif %}
+            
+        <form name="frmLogin" id="frmLogin" action="{{ path('blogs_login_check') }}"  method="POST" class="blogger">
+            
+            <div>
+                <div>
+                    <label class="required" for="username">Username</label>
+                    <input type="text" maxlength="255" required="required" name="username" id="username">
+                </div>
+                <div>
+                    <label class="required" for="password">Password</label>
+                    <input type="password" required="required" name="password" id="password">
+                </div>
+                </div>
+                
+            <input type="submit" value="Login" />
+        </form>
+    </section>
+<script>
+    window.onload = function() {
+        document.getElementById("username").focus();
+    }
+</script>
+{% endblock %}

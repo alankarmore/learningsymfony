@@ -1,0 +1,4 @@
+# src/Blogger/BlogBundle/Resources/config/config.yml
+parameters:
+  # blogger contact email address
+  blogger_blog.emails.contact_email: a.more@easternenterprise.com

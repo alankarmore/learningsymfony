@@ -1,0 +1,18 @@
+{# src/Blogger/BlogBundle/Resources/views/Blogs/show.html.twig #}
+{% extends "BloggerBlogBundle::layout.html.twig" %}
+
+{% block title %}Add Blog{% endblock %}
+
+{% block body %}
+    <article class="blog">
+        <header>
+            <form name="frmAddBlog" id="frmAddBlog" method="POST" action="{{ path('blogs_add') }}" enctype="multipart/form-data" class="blogger">
+                {{ form_errors(form) }}
+                    
+                {{ form_widget(form) }}
+               
+                <input type="submit" value="Create" />    
+            </form>
+        </header>
+    </article>
+{% endblock %}

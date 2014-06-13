@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Blog list</h1>
+    <div class="container">
+        <div class="row">
+            <section class="8u">
+    {% for entity in entities %}
+        <h1><a href="{{ path('blog_show', { 'id': entity.id }) }}" title="{{ entity.blogTitle }}">{{ entity.blogTitle | truncate(15, true, '.......')}}</a></h1>
+        <p>{{ entity.description | truncate(50, true, '.......')}}</p>
+        {% if entity.addedOn %}<p><sub>{{ entity.addedOn|date('d M,Y') }}</sub></p>{% endif %}
+    {% endfor %}
+        <ul>
+        <li>
+            <a href="{{ path('blog_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+        </section>
+        </div>
+</div>        
+    {% endblock %}

@@ -1,0 +1,31 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
+{% extends "BloggerBlogBundle::layout.html.twig" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<header>
+    <h1>Contact Us</h1>
+    <h3> Please let us know your opinion.</h3>
+    <br/>
+</header>
+{# showing the success message to user #}
+{% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+    <div class="blogger-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+<article>
+    <form action="{{ path('blog_contact') }}" method="POST" {{ form_enctype(form) }} class="blogger">
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}    
+            {{ form_row(form.email) }}    
+            {{ form_row(form.subject) }}    
+            {{ form_row(form.message) }}    
+
+            {{ form_rest(form) }} 
+            <input type="submit" value="send" name="submit" />
+        </form>
+    </article>
+{% endblock %}

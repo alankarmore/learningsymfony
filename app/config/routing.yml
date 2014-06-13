@@ -1,0 +1,15 @@
+blogger_admin:
+    resource: "@BloggerAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+blogger_blog:
+    resource: "@BloggerBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+acme_test:
+    resource: "@AcmeTestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
